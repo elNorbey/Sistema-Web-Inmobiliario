@@ -1,22 +1,24 @@
 <?php
 /*
-======================================================
-        SISTEMA WEB INMOBILIARIO CJINVERSIONES
-======================================================
+===================================================================
+            SISTEMA WEB INMOBILIARIO CJINVERSIONES
+===================================================================
 
 Archivo:
-index.php
+    index.php
 
 Descripcion:
-Punto de entrada principal del sitio web.
-Desde aqui se carga toda la aplicacion.
+    Punto de entrada principal del sitio web.
+    Desde aqui se carga la estructura general de todas las paginas.
+===================================================================
 
+===================================================================
 Desarrollador:
-Ing. Norbey Castillo
+    Ing. Norbey Castillo
 
 Version:
-0.1
-
+    0.1
+===================================================================
 */
 
 declare(strict_types = 1);
@@ -26,19 +28,21 @@ declare(strict_types = 1);
 
 <html lang = "es">
 
-<head>
-    <meta charset = "UTF-8">
-
-    <meta name = "viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>CJinversiones</title>
-
-</head>
+<?php
+ 
+    include_once 'includes/head.php'; 
+    
+?>
 
 <body>
 
-    <h1>¡Bienvenido al Sistema Web Inmobiliario!</h1>
+    <?php require_once "includes/navbar.php"; ?>
+
+    <?php require_once "pages/inicio.php"; ?>
+
+    <?php require_once "includes/footer.php"; ?>
+
+    <?php require_once "includes/scripts.php"; ?>
 
 </body>
 

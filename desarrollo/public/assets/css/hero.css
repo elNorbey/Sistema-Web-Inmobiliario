@@ -1,0 +1,79 @@
+/*
+==============================
+            HERO
+==============================
+*/
+
+.hero{
+
+    height: 100vh;
+
+    background: #1f4d3b;
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.hero-content{
+
+    text-align: center;
+
+    color: white;
+
+    max-width: 900px;
+
+    padding: 20px;
+
+}
+
+.hero-content-h1{
+    
+    font-family:var(--title-font);
+
+    font-size:4rem;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+
+}
+
+.hero-content a{
+
+    display: inline-block;
+
+    padding: 18px 45px;
+
+    background: var(--secondary-color);
+
+    color: white;
+
+    border-radius: 40px;
+
+    transition: .3s;
+
+}
+
+.hero-content a:hover{
+
+    transform: translateY(-4px);
+
+}

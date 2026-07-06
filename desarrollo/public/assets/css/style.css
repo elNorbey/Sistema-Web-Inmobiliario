@@ -1,0 +1,57 @@
+/*
+================================================
+         CONFIGURACION GENERAL
+================================================
+*/
+
+*{
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--text-font);
+
+    background-color:var(--white);
+
+    color:var(--black);
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+img{
+
+    display:block;
+
+    width: 100%;
+
+}
+
+button{
+
+    cursor:pointer;
+
+}
