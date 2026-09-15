@@ -258,3 +258,65 @@
     </div>
 </section>
 
+<!-- =======================================
+            SECCION PARA BENEFICIOS -->
+
+<section class = "beneficios">
+    <div class = "container">
+        <div class = "beneficios-encabezado">
+            <p class = "beneficios-etiqueta">
+                ¿POR QUÉ ELEGIRNOS?
+            </p>
+
+            <h2>
+                Una inversion con confianza
+            </h2>
+
+            <p>
+                Te ayudamos a encontrar terrenos que se adapten
+                a tus necesidades y proyectos.
+            </p>
+        </div>
+        
+        <div class = "beneficios-grid">
+            <div class = "beneficio-card">
+
+                <div class = "beneficio-icono">
+                    ✓
+                </div>
+
+                <h3>Asesoria Personalizada</h3>
+                <p>
+                    Te acompañamos durante el proceso para ayudarte
+                    a encontrar una opcion adecuada para ti.
+                </p>
+            </div>
+
+            <div class = "beneficio-card">
+
+                <div class="beneficio-icono">
+                    ⌖
+                </div>
+
+                <h3>Ubicaciones Estratégicas</h3>
+                <p>
+                    Encuentra terrenos en diferentes ubicaciones
+                    con oportunidades para invertir y construir.
+                </p>
+            </div>
+
+            <div class = "beneficio-card">
+                
+                <div class="beneficio-icono">
+                    i
+                </div>
+
+                <h3>Informacion Clara</h3>
+                <p>
+                    Consulta caracteristicas, medidas y detalles
+                    importantes de cada terreno.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
