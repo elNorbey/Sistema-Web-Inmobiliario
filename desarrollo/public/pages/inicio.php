@@ -23,6 +23,9 @@
      
 </section>
 
+<!-- =======================================
+     SECCION PARA DEPARTAMENTOS -->
+
 <section class= "departamentos" id = "departamentos">
     <div class = "container">
         <h2>
@@ -55,7 +58,8 @@
     </div>
 </section>
 
-
+<!-- =======================================
+     SECCION PARA TERRENOS DESTACADOS -->
 
 <section class="terrenos-destacados">
 
@@ -221,8 +225,6 @@
     <!-- Fin de container -->
 
 </section>
-<!-- Fin de terrenos-destacados -->
-
 
 <!-- =======================================
      SECCION PARA INFORMACION DE LA EMPRESA -->
@@ -306,7 +308,7 @@
             </div>
 
             <div class = "beneficio-card">
-                
+
                 <div class="beneficio-icono">
                     i
                 </div>
@@ -317,6 +319,36 @@
                     importantes de cada terreno.
                 </p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- =======================================
+     SECCION PARA LLAMADA A LA ACCION -->
+
+<section class = "cta-contacto">
+    <div class = "container">
+        <div class = "cta-contenido">
+            <p class = "cta-etiqueta">
+                DA EL SIGUIENTE PASO
+            </p>
+
+            <h2>
+                ¿Listo para encontrar 
+                <span>
+                    tu terreno ideal?
+                </span> 
+            </h2>
+
+            <p class = "cta-descripcion">
+                Conoce nuestras opciones disponibles y encuentra
+                el terreno que mejor se adapte a tus proyectos
+                y necesidades.
+            </p>
+
+            <a href = "#" class = "cta-btn">
+                Contáctanos
+            </a>
         </div>
     </div>
 </section>
