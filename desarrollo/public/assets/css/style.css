@@ -55,3 +55,372 @@ button{
     cursor:pointer;
 
 }
+
+.container{
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+/*
+==============================================
+        SECCION DEPARTAMENTOS
+==============================================
+*/
+
+.departamentos{
+
+    padding: 120px 0;
+
+    background-color:var(--gray);
+
+}
+
+.departamentos h2{
+
+    font-family:var(--title-font);
+
+    font-size: 3.2rem;
+
+    text-align: center;
+
+    color: var(--primary-color);
+
+    margin-bottom: 15px;
+
+}
+
+.departamentos > .container > p {
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align:center;
+
+    color: var(--dark-gray);
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+}
+
+.departamentos-grid{
+
+    display:grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 35px;
+
+}
+
+/*
+==============================================
+        TARJETAS DEPARTAMENTOS
+==============================================
+*/
+
+.departamento-card{
+
+    display: block;
+
+    background: white;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.10);
+
+}
+
+.departamento-card:hover{
+
+    transform: translateY(-12px);
+
+    box-shadow: 0 25px 50px rgba(0,0,0,.10);
+
+}
+
+.departamento-card img{
+
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+
+}
+
+.departamento-card:hover img{
+
+    transform: scale(1.08);
+
+}
+
+.departamento-info {
+
+    padding: 30px;
+
+}
+
+.departamento-info h3{
+
+    font-family:var(--title-font);
+
+    color: var(--primary-color);
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+    position: relative;
+
+}
+
+.departamento-info h3::after{
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 4px;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    background: var(--secondary-color);
+
+}
+
+.departamento-info p{
+
+    color: var(--dark-gray);
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+
+}
+
+/*
+==============================================
+        Terrenos Destacados
+==============================================
+*/
+
+.terrenos-destacados{
+
+    padding: 120px 0;
+
+    background: white;
+
+}
+
+.terreno-destacados h2{
+
+    font-family:var(--title-font);
+
+    font-size: 3rem;
+
+    color:var(--primary-color);
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+}
+
+.terreno-destacados > .container > p{
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+    color:var(--dark-gray);
+
+    line-height: 1.8;
+}
+
+/*.terreno-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+}*/
+
+.terreno-card{
+
+    background:white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.10);
+
+    transition: var(--transition);
+
+    flex: 0 0 443.5px;
+}
+
+.terreno-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+}
+
+.terreno-card img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+.terreno-info{
+
+    padding:30px;
+
+}
+
+.terreno-info h3{
+
+    font-family:var(--title-font);
+
+    color:var(--primary-color);
+
+    margin-bottom:15px;
+
+}
+
+.terreno-info p{
+
+    margin-bottom:10px;
+
+    color:var(--dark-gray);
+
+}
+
+.precio{
+
+    color:var(--secondary-color);
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+    margin:20px 0;
+
+}
+
+.terreno-info a{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    background:var(--primary-color);
+
+    color:white;
+
+    border-radius:30px;
+
+    transition:var(--transition);
+
+}
+
+.terreno-info a:hover{
+
+    background:var(--secondary-color);
+
+}
+
+/*
+===============================
+CARRUSEL DE TERRENOS DESTACADOS
+===============================
+*/
+.terrenos-carousel{
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.terreno-track{
+
+    display: flex;
+
+    gap: 35px;
+
+    width: max-content;
+
+    transition: transform .5s ease;
+
+}
+
+.carousel-controles{
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+.carousel-btn{
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--primary-color);
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.carousel-btn:hover{
+
+    background: var(--secondary-color);
+
+    transform: scale(1.1);
+
+}

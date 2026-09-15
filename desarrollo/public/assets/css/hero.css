@@ -6,15 +6,11 @@
 
 .hero{
 
+   position: relative;
+
+    width: 100%;
+
     height: 100vh;
-
-    background: #1f4d3b;
-
-    background-size: cover;
-
-    background-position: center;
-
-    position: relative;
 
     display: flex;
 
@@ -22,9 +18,34 @@
 
     align-items: center;
 
+    overflow: hidden;
+
+    background-image: url(../img/banners/banners-01.avif);
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    animation: heroZoom 15s ease-in-out infinite alternate;
+}
+
+.hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background:rgba(0,0,0,.30);
+
 }
 
 .hero-content{
+
+    position: relative;
+
+    z-index: 2;
 
     text-align: center;
 
@@ -34,15 +55,21 @@
 
     padding: 20px;
 
+    margin-top: 70px;
+
 }
 
-.hero-content-h1{
+.hero-content h1{
     
     font-family:var(--title-font);
 
-    font-size:4rem;
+    font-size: 4.5em;
+
+    line-height: 1.15;
 
     margin-bottom:25px;
+
+    color: white;
 
 }
 
@@ -54,13 +81,19 @@
 
     margin-bottom: 40px;
 
+    max-width: 700px;
+
+    margin-left: auto;
+    
+    margin-right: auto;
+
 }
 
 .hero-content a{
 
     display: inline-block;
 
-    padding: 18px 45px;
+    padding: 20px 50px;
 
     background: var(--secondary-color);
 
@@ -68,12 +101,54 @@
 
     border-radius: 40px;
 
-    transition: .3s;
+    font-weight: 600;
+
+    transition: var(--transition);
 
 }
 
 .hero-content a:hover{
 
     transform: translateY(-4px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.30)
+
+}
+
+.hero-fade{
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,95),
+
+        #FFFFFF
+    );
+
+}
+
+@keyframes heroZoom{
+
+    from {
+
+        transform: scale(1);
+
+    }
+
+    to{
+
+        transform: scale(1.08);
+
+    }
 
 }
