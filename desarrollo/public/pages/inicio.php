@@ -222,4 +222,39 @@
 
 </section>
 <!-- Fin de terrenos-destacados -->
-```
+
+
+<!-- =======================================
+     SECCION PARA INFORMACION DE LA EMPRESA -->
+
+<section class = "sobre-nosotros">
+    <div class = "container">
+        <div class = "sobre-nosotros-contenido">
+            <div class = "sobre-nosotros-imagen">
+                <img src = "assets/img/empresa/oficina.jpg" alt = "Oficina de CJinversiones">
+            </div>
+
+            <div class = "sobre-nosotros-info">
+                <p class = "sobre-nosotros-etiqueta">
+                    SOBRE NOSOTROS
+                </p>
+
+                <h2>
+                    Te acompañamos a encontrar el lugar ideal para invertir
+                </h2>
+
+                <p>
+                    Facilitamos la busqueda de terrenos en diferentes
+                    ubicaciones de Guatemala, brindando informacion clara
+                    para ayudarte a encontrar una opcion que se adapte
+                    a tus necesidades.
+                </p>
+
+                <a href = "#" class = "sobre-nosotros-btn">
+                    Conoce mas
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+

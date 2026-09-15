@@ -13,7 +13,7 @@ BARRA DE NAVEGACION PRINCIPAL
 <nav>
     <div class = "logo">
 
-        Tierra Viva
+        CJinversiones
 
     </div>
 
