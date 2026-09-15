@@ -235,7 +235,7 @@ button{
 
 }
 
-.terreno-destacados h2{
+.terrenos-destacados h2{
 
     font-family:var(--title-font);
 
@@ -249,7 +249,7 @@ button{
 
 }
 
-.terreno-destacados > .container > p{
+.terrenos-destacados > .container > p{
 
     max-width: 700px;
 
@@ -371,6 +371,8 @@ CARRUSEL DE TERRENOS DESTACADOS
     width: 100%;
 
     overflow: hidden;
+
+    padding-top: 15px;
 }
 
 .terreno-track{
