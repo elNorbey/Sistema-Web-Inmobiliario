@@ -352,3 +352,64 @@
         </div>
     </div>
 </section>
+
+<!-- =======================================
+     SECCION PARA LLAMADA A LA ACCION -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-contenido">
+
+            <!-- Informacion de la empresa -->
+            <div class="footer-empresa">
+
+                <h2>CJINVERSIONES</h2>
+
+                <p>
+                    Encuentra terrenos para construir, invertir
+                    y hacer realidad tus próximos proyectos.
+                </p>
+
+            </div>
+
+
+            <!-- Navegacion -->
+            <div class="footer-navegacion">
+
+                <h3>Explora</h3>
+
+                <a href="#">Inicio</a>
+                <a href="#">Terrenos</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Contacto</a>
+
+            </div>
+
+
+            <!-- Contacto -->
+            <div class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>Guatemala</p>
+                <p>Teléfono: +502 XXXX-XXXX</p>
+                <p>Correo: contacto@cjinversiones.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-inferior">
+
+            <p>
+                © 2026 CJINVERSIONES. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
