@@ -67,3 +67,28 @@ nav a:hover {
     
 }
 
+/*
+===============================================
+        NAVBAR SOBRE FONDO CLARO
+===============================================
+*/
+
+.navbar-clara{
+
+    background: rgba(255,255,255,.95);
+
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+
+}
+
+.navbar-clara .logo{
+
+    color: var(--primary-color);
+
+}
+
+.navbar-clara a{
+
+    color: var(--primary-color);
+
+}

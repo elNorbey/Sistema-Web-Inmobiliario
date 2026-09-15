@@ -10,7 +10,7 @@ BARRA DE NAVEGACION PRINCIPAL
 
 ?>
 
-<nav>
+<nav class = "navbar">
     <div class = "logo">
 
         CJinversiones

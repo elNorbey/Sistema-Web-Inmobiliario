@@ -199,6 +199,34 @@ declare(strict_types = 1);
             
         });
 
+        const navbar = document.querySelector('.navbar');
+        const hero = document.querySelector('.hero');
+        const cta = document.querySelector('.cta-contacto');
+
+        window.addEventListener('scroll', () => {
+            const navbarAltura = navbar.offsetHeight;
+
+            const limiteHero = hero.offsetHeight - navbarAltura;
+
+            const inicioCTA = cta.offsetTop - navbarAltura;
+            const finCTA = cta.offsetTop + cta.offsetHeight;
+
+            const scrollActual = window.scrollY;
+
+            if(
+                scrollActual <= limiteHero ||
+                (scrollActual >= inicioCTA && scrollActual <= finCTA)
+            ){
+
+                navbar.classList.remove('navbar-clara');
+
+            } else {
+
+                navbar.classList.add('navbar-clara');
+
+            }
+        });
+        
     </script>
 
 </body>
