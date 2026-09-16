@@ -954,3 +954,473 @@ CARRUSEL DE TERRENOS DESTACADOS
     font-size: .9rem;
 
 }
+
+/*
+==============================================
+        PAGINA TERRENOS - HERO
+==============================================
+*/
+
+.terrenos-hero{
+
+    position: relative;
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    background-image: url("../img/empresa/cta-fondo.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+}
+
+.terrenos-hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.50);
+
+}
+
+.terrenos-hero .container{
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+}
+
+.terrenos-hero-contenido{
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+}
+
+.terrenos-hero-etiqueta{
+
+    font-family: var(--text-font);
+
+    color: var(--secondary-color);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+.terrenos-hero-contenido h1{
+
+    font-family: var(--title-font);
+
+    color: var(--white);
+
+    font-size: 4rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+}
+
+.terrenos-hero-contenido h1 span{
+
+    display: block;
+
+    color: var(--secondary-color);
+
+}
+
+.terrenos-hero-descripcion{
+
+    font-family: var(--text-font);
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+
+}
+
+/*
+==============================================
+        PAGINA TERRENOS - FILTROS
+==============================================
+*/
+
+.terrenos-filtros{
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: -55px;
+
+    padding-bottom: 70px;
+
+}
+
+.filtros-contenido{
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr) auto;
+
+    gap: 25px;
+
+    align-items: end;
+
+    padding: 30px 35px;
+
+    background: var(--white);
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,.12);
+
+}
+
+.filtro-grupo{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.filtro-grupo label{
+
+    font-family: var(--text-font);
+
+    color: var(--primary-color);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+}
+
+.filtro-grupo select{
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background: var(--white);
+
+    color: var(--dark);
+
+    font-family: var(--text-font);
+
+    font-size: .95rem;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.filtro-grupo select:focus{
+
+    border-color: var(--secondary-color);
+
+}
+
+.filtros-btn{
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary-color);
+
+    color: var(--white);
+
+    font-family: var(--text-font);
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    white-space: nowrap;
+
+}
+
+.filtros-btn:hover{
+
+    background: var(--secondary-color);
+
+    transform: translateY(-2px);
+
+}
+
+/*
+==============================================
+        PAGINA TERRENOS - CATALOGO
+==============================================
+*/
+
+.catalogo-terrenos{
+
+    padding: 40px 0 120px;
+
+    background: var(--white);
+
+}
+
+.catalogo-encabezado{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+
+}
+
+.catalogo-etiqueta{
+
+    font-family: var(--text-font);
+
+    color: var(--secondary-color);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
+.catalogo-encabezado h2{
+
+    font-family: var(--title-font);
+
+    color: var(--primary-color);
+
+    font-size: 3rem;
+
+}
+
+.catalogo-resultados{
+
+    font-family: var(--text-font);
+
+    color: var(--dark);
+
+    font-size: .95rem;
+
+}
+
+.catalogo-grid{
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+
+}
+
+.catalogo-card{
+
+    background: var(--white);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,.10);
+
+    transition: var(--transition);
+
+}
+
+.catalogo-card:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.catalogo-imagen{
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.catalogo-imagen img{
+
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s ease;
+
+}
+
+.catalogo-card:hover .catalogo-imagen img{
+
+    transform: scale(1.05);
+
+}
+
+.catalogo-estado{
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 8px 16px;
+
+    background: var(--primary-color);
+
+    color: var(--white);
+
+    border-radius: 25px;
+
+    font-family: var(--text-font);
+
+    font-size: .8rem;
+
+    font-weight: 500;
+
+}
+
+.catalogo-info{
+
+    padding: 30px;
+
+}
+
+.catalogo-ubicacion{
+
+    font-family: var(--text-font);
+
+    color: var(--secondary-color);
+
+    font-size: .9rem;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+
+}
+
+.catalogo-info h3{
+
+    font-family: var(--title-font);
+
+    color: var(--primary-color);
+
+    font-size: 1.8rem;
+
+    margin-bottom: 20px;
+
+}
+
+.catalogo-datos{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    margin-bottom: 20px;
+
+    border-top: 1px solid #eee;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.catalogo-datos span{
+
+    font-family: var(--text-font);
+
+    color: var(--dark);
+
+    font-weight: 500;
+
+}
+
+.catalogo-info a{
+
+    display: inline-block;
+
+    font-family: var(--text-font);
+
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+.catalogo-info a:hover{
+
+    color: var(--secondary-color);
+
+    transform: translateX(5px);
+
+}

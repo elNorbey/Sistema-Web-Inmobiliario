@@ -38,197 +38,355 @@ declare(strict_types = 1);
 
     <?php require_once "includes/navbar.php"; ?>
 
-    <?php require_once "pages/inicio.php"; ?>
+    <?php
+
+        $pagina = $_GET['pagina'] ?? 'inicio';
+
+        if($pagina === 'terrenos'){
+
+            require_once "pages/terrenos.php";
+
+        } else {
+
+            require_once "pages/inicio.php";
+
+        }
+
+    ?>
 
     <?php require_once "includes/footer.php"; ?>
 
     <?php require_once "includes/scripts.php"; ?>
 
-    <script>
+    <?php if($pagina === 'inicio'): ?>
 
-        const track = document.querySelector('.terreno-track');
+        <script>
 
-        const btnAnterior = document.querySelector('.anterior');
+            const track = document.querySelector('.terreno-track');
 
-        const btnSiguiente = document.querySelector('.siguiente');
+            const btnAnterior = document.querySelector('.anterior');
 
-        const tarjetasOriginales =
-            Array.from(document.querySelectorAll('.terreno-card'));
+            const btnSiguiente = document.querySelector('.siguiente');
 
-        const espacio = 35;
+            const tarjetasOriginales =
+                Array.from(document.querySelectorAll('.terreno-card'));
 
-        const visibles = 3;
+            const espacio = 35;
 
-        const movimiento =
-            tarjetasOriginales[0].offsetWidth + espacio;
+            const visibles = 3;
 
-
-    /* ==================================
-       CLONAR TARJETAS
-    ================================== */
-
-        const primeras = tarjetasOriginales.slice(0, visibles);
-
-        const ultimas = tarjetasOriginales.slice(-visibles);
+            const movimiento =
+                tarjetasOriginales[0].offsetWidth + espacio;
 
 
-        primeras.forEach(tarjeta => {
+        /* ==================================
+        CLONAR TARJETAS
+        ================================== */
 
-            track.appendChild(tarjeta.cloneNode(true));
+            const primeras = tarjetasOriginales.slice(0, visibles);
 
-        });
-
-
-        ultimas.reverse().forEach(tarjeta => {
-
-            track.prepend(tarjeta.cloneNode(true));
-
-        });
+            const ultimas = tarjetasOriginales.slice(-visibles);
 
 
-    /* ==================================
-       POSICIÓN INICIAL
-    ================================== */
+            primeras.forEach(tarjeta => {
 
-        let indice = visibles;
+                track.appendChild(tarjeta.cloneNode(true));
 
-        let bloqueado = false;
-
-        let intervalo;
+            });
 
 
-        track.style.transition = 'none';
+            ultimas.reverse().forEach(tarjeta => {
 
-        track.style.transform =
-            `translateX(-${indice * movimiento}px)`;
+                track.prepend(tarjeta.cloneNode(true));
+
+            });
 
 
-    /* ==================================
+        /* ==================================
+        POSICIÓN INICIAL
+        ================================== */
+
+            let indice = visibles;
+
+            let bloqueado = false;
+
+            let intervalo;
+
+
+            track.style.transition = 'none';
+
+            track.style.transform =
+                `translateX(-${indice * movimiento}px)`;
+
+
+        /* ==================================
        BOTÓN SIGUIENTE
-    ================================== */
+        ================================== */
 
-        btnSiguiente.addEventListener('click', () => {
+            btnSiguiente.addEventListener('click', () => {
 
-            if(bloqueado) return;
+                if(bloqueado) return;
 
-            bloqueado = true;
+                bloqueado = true;
 
-            indice++;
+                indice++;
 
-            track.style.transition = 'transform .5s ease';
+                track.style.transition = 'transform .5s ease';
 
-            track.style.transform =
-                `translateX(-${indice * movimiento}px)`;
+                track.style.transform =
+                    `translateX(-${indice * movimiento}px)`;
 
-        });
+            });
 
 
-    /* ==================================
+        /* ==================================
        BOTÓN ANTERIOR
-    ================================== */
+        ================================== */
 
-        btnAnterior.addEventListener('click', () => {
+            btnAnterior.addEventListener('click', () => {
 
-            if(bloqueado) return;
+                if(bloqueado) return;
 
-            bloqueado = true;
+                bloqueado = true;
 
-            indice--;
+                indice--;
 
-            track.style.transition = 'transform .5s ease';
+                track.style.transition = 'transform .5s ease';
 
-            track.style.transform =
-                `translateX(-${indice * movimiento}px)`;
+                track.style.transform =
+                    `translateX(-${indice * movimiento}px)`;
 
-        });
+            });
 
 
-    /* ==================================
+        /* ==================================
        REINICIO INVISIBLE
-    ================================== */
+        ================================== */
 
-        track.addEventListener('transitionend', () => {
+            track.addEventListener('transitionend', () => {
 
-            if(indice >= tarjetasOriginales.length + visibles){
+                if(indice >= tarjetasOriginales.length + visibles){
 
-                track.style.transition = 'none';
+                    track.style.transition = 'none';
 
-                indice = visibles;
+                    indice = visibles;
 
-                track.style.transform =
-                    `translateX(-${indice * movimiento}px)`;
+                    track.style.transform =
+                        `translateX(-${indice * movimiento}px)`;
+
+                }
+
+
+                if(indice < visibles){
+
+                    track.style.transition = 'none';
+
+                    indice = tarjetasOriginales.length + visibles - 1;
+
+                    track.style.transform =
+                        `translateX(-${indice * movimiento}px)`;
+
+                }
+
+
+                bloqueado = false;
+
+            });
+
+            function iniciarCarruselAutomatico(){
+
+                intervalo = setInterval(() => {
+                    btnSiguiente.click();
+                }, 4000);
 
             }
-
-
-            if(indice < visibles){
-
-                track.style.transition = 'none';
-
-                indice = tarjetasOriginales.length + visibles - 1;
-
-                track.style.transform =
-                    `translateX(-${indice * movimiento}px)`;
-
-            }
-
-
-            bloqueado = false;
-
-        });
-
-        function iniciarCarruselAutomatico(){
-
-            intervalo = setInterval(() => {
-                btnSiguiente.click();
-            }, 4000);
-
-        }
-
-        iniciarCarruselAutomatico();
-
-        track.addEventListener('mouseenter', () => {
-
-            clearInterval(intervalo);
-
-        });
-
-        track.addEventListener('mouseleave', () => {
 
             iniciarCarruselAutomatico();
+
+            track.addEventListener('mouseenter', () => {
+
+                clearInterval(intervalo);
+
+            });
+
+            track.addEventListener('mouseleave', () => {
+
+                iniciarCarruselAutomatico();
             
-        });
+            });
 
-        const navbar = document.querySelector('.navbar');
-        const hero = document.querySelector('.hero');
-        const cta = document.querySelector('.cta-contacto');
+            const navbar = document.querySelector('.navbar');
+            const hero = document.querySelector('.hero');
+            const cta = document.querySelector('.cta-contacto');
 
-        window.addEventListener('scroll', () => {
-            const navbarAltura = navbar.offsetHeight;
+            window.addEventListener('scroll', () => {
+                const navbarAltura = navbar.offsetHeight;
 
-            const limiteHero = hero.offsetHeight - navbarAltura;
+                const limiteHero = hero.offsetHeight - navbarAltura;
 
-            const inicioCTA = cta.offsetTop - navbarAltura;
-            const finCTA = cta.offsetTop + cta.offsetHeight;
+                const inicioCTA = cta.offsetTop - navbarAltura;
+                const finCTA = cta.offsetTop + cta.offsetHeight;
 
-            const scrollActual = window.scrollY;
+                const scrollActual = window.scrollY;
 
-            if(
-                scrollActual <= limiteHero ||
-                (scrollActual >= inicioCTA && scrollActual <= finCTA)
-            ){
+                if(
+                    scrollActual <= limiteHero ||
+                    (scrollActual >= inicioCTA && scrollActual <= finCTA)
+                ){
 
-                navbar.classList.remove('navbar-clara');
+                    navbar.classList.remove('navbar-clara');
 
-            } else {
+                } else {
 
-                navbar.classList.add('navbar-clara');
+                    navbar.classList.add('navbar-clara');
 
-            }
-        });
+                }
+            });
         
-    </script>
+            </script>
 
-</body>
+        <?php endif; ?>
+
+
+
+        <!--Filtros de la pagina TERRENOS-->
+        <?php if($pagina === 'terrenos'): ?>
+
+            <script>
+
+                const filtroDepartamento =
+                document.querySelector('#departamento');
+
+                const filtroPrecio =
+                document.querySelector('#precio');
+
+                const filtroArea =
+                document.querySelector('#area');
+
+                const btnLimpiar =
+                document.querySelector('#limpiarFiltros');
+
+                const tarjetasTerrenos =
+                document.querySelectorAll('.catalogo-card');
+
+                const contadorResultados =
+                document.querySelector('.catalogo-resultados');
+
+                const parametrosURL =
+                new URLSearchParams(window.location.search);
+
+                const departamentoURL =
+                parametrosURL.get('departamento');
+
+
+                function filtrarTerrenos(){
+
+                    const departamentoSeleccionado =
+                    filtroDepartamento.value;
+
+                    const precioSeleccionado =
+                    filtroPrecio.value;
+
+                    const areaSeleccionada =
+                    filtroArea.value;
+
+                    let cantidadVisible = 0;
+
+
+                    tarjetasTerrenos.forEach(tarjeta => {
+
+                        const departamentoTarjeta =
+                        tarjeta.dataset.departamento;
+
+                        const precioTarjeta =
+                        Number(tarjeta.dataset.precio);
+
+                        const areaTarjeta =
+                        Number(tarjeta.dataset.area);
+
+
+                        const cumpleDepartamento =
+                        departamentoSeleccionado === '' ||
+                        departamentoTarjeta === departamentoSeleccionado;
+
+                        const cumpleArea =
+                        areaSeleccionada === '' ||
+                        (
+                            areaSeleccionada === '1201'
+                            ? areaTarjeta > 1200
+                            : areaTarjeta <= Number(areaSeleccionada)
+                        );
+
+
+                        const cumplePrecio =
+                        precioSeleccionado === '' ||
+                        precioTarjeta <= Number(precioSeleccionado);
+
+
+                        if(cumpleDepartamento && cumplePrecio && cumpleArea){
+
+                            tarjeta.style.display = '';
+
+                            cantidadVisible++;
+
+                        } else {
+
+                            tarjeta.style.display = 'none';
+
+                        }
+
+                    });
+
+
+                    contadorResultados.textContent =
+                    `${cantidadVisible} terrenos disponibles`;
+
+                }
+
+
+                filtroDepartamento.addEventListener(
+                    'change',
+                    filtrarTerrenos
+                );
+
+                filtroPrecio.addEventListener(
+                    'change',
+                    filtrarTerrenos
+                );
+
+                filtroArea.addEventListener(
+                    'change',
+                    filtrarTerrenos
+                );
+
+                if(departamentoURL){
+
+                    filtroDepartamento.value = departamentoURL;
+
+                    filtrarTerrenos();
+                }
+
+                btnLimpiar.addEventListener('click', () => {
+
+                    filtroDepartamento.value = '';
+
+                    filtroPrecio.value = '';
+
+                    filtroArea.value = '';
+
+                    filtrarTerrenos();
+
+                    window.history.replaceState(
+                        {},
+                        '',
+                        'index.php?pagina=terrenos'
+                    );
+                });
+
+            </script>
+
+        <?php endif; ?>
+
+    </body>
 
 </html>

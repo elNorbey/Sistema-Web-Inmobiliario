@@ -37,7 +37,7 @@
         </p>
 
         <div class = "departamentos-grid">
-            <a href="#cuilapa" class = "departamento-card">
+            <a href="index.php?pagina=terrenos&departamento=cuilapa" class = "departamento-card">
                 <img src="assets/img/departamentos/Cuilapa.jpg" alt="Cuilapa">
                 <div class = "departamento-info">
                     <h3>Cuilapa</h3>
@@ -46,7 +46,7 @@
                 </div>
             </a>
 
-            <a href="#oratorio" class = "departamento-card">
+            <a href="index.php?pagina=terrenos&departamento=oratorio" class = "departamento-card">
                 <img src = "assets/img/departamentos/Oratorio.jpg" alt = "Oratorio">
                 <div class = "departamento-info">
                     <h3>Oratorio</h3>
@@ -380,8 +380,8 @@
 
                 <h3>Explora</h3>
 
-                <a href="#">Inicio</a>
-                <a href="#">Terrenos</a>
+                <a href="index.php?pagina=inicio">Inicio</a>
+                <a href="index.php?pagina=terrenos">Terrenos</a>
                 <a href="#">Nosotros</a>
                 <a href="#">Contacto</a>
 
